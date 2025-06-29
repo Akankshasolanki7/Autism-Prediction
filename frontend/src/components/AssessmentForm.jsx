@@ -168,11 +168,8 @@ const AssessmentForm = ({ onSubmit, isLoading }) => {
                           type="radio"
                           value="1"
                           {...register(`${key}_Score`, { required: "This field is required" })}
-                          className="sr-only"
+                          className="w-4 h-4 text-green-600 border-gray-300 focus:ring-green-500 focus:ring-2 mr-3"
                         />
-                        <div className="w-5 h-5 border-2 border-green-300 rounded-full mr-3 group-hover:border-green-400 transition-colors duration-200 flex items-center justify-center">
-                          <div className="w-3 h-3 bg-green-500 rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-200"></div>
-                        </div>
                         <span className="text-green-600 font-semibold group-hover:text-green-700">Yes</span>
                       </label>
                       <label className="flex items-center cursor-pointer group">
@@ -180,11 +177,8 @@ const AssessmentForm = ({ onSubmit, isLoading }) => {
                           type="radio"
                           value="0"
                           {...register(`${key}_Score`, { required: "This field is required" })}
-                          className="sr-only"
+                          className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500 focus:ring-2 mr-3"
                         />
-                        <div className="w-5 h-5 border-2 border-red-300 rounded-full mr-3 group-hover:border-red-400 transition-colors duration-200 flex items-center justify-center">
-                          <div className="w-3 h-3 bg-red-500 rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-200"></div>
-                        </div>
                         <span className="text-red-600 font-semibold group-hover:text-red-700">No</span>
                       </label>
                     </div>
@@ -409,11 +403,8 @@ const AssessmentForm = ({ onSubmit, isLoading }) => {
                       type="radio"
                       value="yes"
                       {...register("jaundice", { required: "This field is required" })}
-                      className="sr-only"
+                      className="w-4 h-4 text-green-600 border-gray-300 focus:ring-green-500 focus:ring-2 mr-3"
                     />
-                    <div className="w-5 h-5 border-2 border-green-300 rounded-full mr-3 group-hover:border-green-400 transition-colors duration-200 flex items-center justify-center">
-                      <div className="w-3 h-3 bg-green-500 rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-200"></div>
-                    </div>
                     <span className="text-green-600 font-semibold group-hover:text-green-700">Yes</span>
                   </label>
                   <label className="flex items-center cursor-pointer group">
@@ -421,11 +412,8 @@ const AssessmentForm = ({ onSubmit, isLoading }) => {
                       type="radio"
                       value="no"
                       {...register("jaundice", { required: "This field is required" })}
-                      className="sr-only"
+                      className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500 focus:ring-2 mr-3"
                     />
-                    <div className="w-5 h-5 border-2 border-red-300 rounded-full mr-3 group-hover:border-red-400 transition-colors duration-200 flex items-center justify-center">
-                      <div className="w-3 h-3 bg-red-500 rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-200"></div>
-                    </div>
                     <span className="text-red-600 font-semibold group-hover:text-red-700">No</span>
                   </label>
                 </div>
@@ -463,11 +451,8 @@ const AssessmentForm = ({ onSubmit, isLoading }) => {
                       type="radio"
                       value="yes"
                       {...register("austim", { required: "This field is required" })}
-                      className="sr-only"
+                      className="w-4 h-4 text-green-600 border-gray-300 focus:ring-green-500 focus:ring-2 mr-3"
                     />
-                    <div className="w-5 h-5 border-2 border-green-300 rounded-full mr-3 group-hover:border-green-400 transition-colors duration-200 flex items-center justify-center">
-                      <div className="w-3 h-3 bg-green-500 rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-200"></div>
-                    </div>
                     <span className="text-green-600 font-semibold group-hover:text-green-700">Yes</span>
                   </label>
                   <label className="flex items-center cursor-pointer group">
@@ -475,11 +460,8 @@ const AssessmentForm = ({ onSubmit, isLoading }) => {
                       type="radio"
                       value="no"
                       {...register("austim", { required: "This field is required" })}
-                      className="sr-only"
+                      className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500 focus:ring-2 mr-3"
                     />
-                    <div className="w-5 h-5 border-2 border-red-300 rounded-full mr-3 group-hover:border-red-400 transition-colors duration-200 flex items-center justify-center">
-                      <div className="w-3 h-3 bg-red-500 rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-200"></div>
-                    </div>
                     <span className="text-red-600 font-semibold group-hover:text-red-700">No</span>
                   </label>
                 </div>
@@ -517,11 +499,8 @@ const AssessmentForm = ({ onSubmit, isLoading }) => {
                       type="radio"
                       value="yes"
                       {...register("used_app_before", { required: "This field is required" })}
-                      className="sr-only"
+                      className="w-4 h-4 text-green-600 border-gray-300 focus:ring-green-500 focus:ring-2 mr-3"
                     />
-                    <div className="w-5 h-5 border-2 border-green-300 rounded-full mr-3 group-hover:border-green-400 transition-colors duration-200 flex items-center justify-center">
-                      <div className="w-3 h-3 bg-green-500 rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-200"></div>
-                    </div>
                     <span className="text-green-600 font-semibold group-hover:text-green-700">Yes</span>
                   </label>
                   <label className="flex items-center cursor-pointer group">
@@ -529,11 +508,8 @@ const AssessmentForm = ({ onSubmit, isLoading }) => {
                       type="radio"
                       value="no"
                       {...register("used_app_before", { required: "This field is required" })}
-                      className="sr-only"
+                      className="w-4 h-4 text-red-600 border-gray-300 focus:ring-red-500 focus:ring-2 mr-3"
                     />
-                    <div className="w-5 h-5 border-2 border-red-300 rounded-full mr-3 group-hover:border-red-400 transition-colors duration-200 flex items-center justify-center">
-                      <div className="w-3 h-3 bg-red-500 rounded-full opacity-0 group-hover:opacity-50 transition-opacity duration-200"></div>
-                    </div>
                     <span className="text-red-600 font-semibold group-hover:text-red-700">No</span>
                   </label>
                 </div>
