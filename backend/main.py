@@ -30,7 +30,7 @@ app = FastAPI(
 
 # Configure CORS
 import os
-allowed_origins = os.getenv("CORS_ORIGINS", "http://localhost:3000,http://localhost:5173").split(",")
+allowed_origins = os.getenv("CORS_ORIGINS", "http://localhost:3000,http://localhost:5173,https://austin-1j6xdjcdy-akankshakhushi865-gmailcoms-projects.vercel.app,https://austim-production.up.railway.app").split(",")
 
 app.add_middleware(
     CORSMiddleware,
