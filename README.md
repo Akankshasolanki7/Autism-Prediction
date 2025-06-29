@@ -14,7 +14,7 @@ A modern web application for predicting Autism Spectrum Disorder using machine l
 ## Technology Stack
 
 ### Frontend
-- React 18 with TypeScript
+- React 18 
 - Tailwind CSS for styling
 - Framer Motion for animations
 - React Hook Form for form management
