@@ -162,6 +162,17 @@ Autism-Spectrum-Disorder-ASD-Prediction-System/
 .railway
 deploy.md
 
+# Unnecessary config files for GitHub
+Procfile
+railway.toml
+main.py
+backend/Dockerfile
+backend/railway.json
+backend/render.yaml
+frontend/.env.example
+frontend/.env.production
+frontend/vercel.json
+
 # Temporary files
 *.tmp
 *.temp
