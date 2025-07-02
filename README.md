@@ -1,212 +1,86 @@
 # 🧠 ASD Prediction System
 
-A modern, AI-powered web application for Autism Spectrum Disorder (ASD) screening using advanced machine learning algorithms. This system provides an intuitive, step-by-step assessment process with real-time predictions and professional recommendations.
+AI-powered web application for Autism Spectrum Disorder screening using machine learning.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20App-blue?style=for-the-badge)](https://austin-umber.vercel.app/)
-[![API Docs](https://img.shields.io/badge/API-Documentation-green?style=for-the-badge)](https://austim-production.up.railway.app/docs)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-blue?style=for-the-badge)](https://austin-umber.vercel.app/) [![API Docs](https://img.shields.io/badge/📖_API_Docs-green?style=for-the-badge)](https://austim-production.up.railway.app/docs)
 
-## ✨ Features
+## What it does
+- **Interactive questionnaire** → **AI analysis** → **Instant results** → **Professional recommendations**
+- No data stored, completely private screening process
 
-- 🎯 **Interactive Assessment**: Step-by-step behavioral questionnaire with progress tracking
-- 🤖 **AI-Powered Predictions**: Advanced XGBoost machine learning model for accurate screening
-- 📱 **Responsive Design**: Modern, mobile-friendly interface with smooth animations
-- 🔒 **Privacy-Focused**: No data storage, immediate processing and results
-- 👨‍⚕️ **Professional Guidance**: Clear recommendations for medical consultation
-- ⚡ **Real-Time Results**: Instant predictions with detailed explanations
+## Tech Stack
 
-## 🛠️ Technology Stack
+**Frontend:** React + Vite + Tailwind CSS + Framer Motion
+**Backend:** FastAPI + Random Forest + Scikit-learn + Pandas
+**Deployment:** Vercel (Frontend) + Railway (Backend)
+**ML Model:** Random Forest classifier (93% accuracy) with SMOTE balancing
 
-### 🔧 Backend Technologies
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| **FastAPI** | Modern Python web framework for APIs | 0.100.0+ |
-| **XGBoost** | Gradient boosting ML algorithm for predictions | 1.7.0+ |
-| **Scikit-learn** | Machine learning utilities and preprocessing | 1.3.0+ |
-| **Pandas** | Data manipulation and analysis | 2.0.0+ |
-| **NumPy** | Numerical computing and array operations | 1.21.0+ |
-| **Uvicorn** | ASGI server for production deployment | 0.20.0+ |
-| **Pydantic** | Data validation and settings management | 2.0.0+ |
+## Quick Start
 
-### 🎨 Frontend Technologies
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| **React** | Modern JavaScript library for building UIs | 18.2.0+ |
-| **Vite** | Fast build tool and development server | 4.4.0+ |
-| **Tailwind CSS** | Utility-first CSS framework for styling | 3.3.0+ |
-| **Framer Motion** | Production-ready motion library for animations | 10.16.0+ |
-| **React Hook Form** | Performant forms with easy validation | 7.45.0+ |
+```bash
+# 1. Clone repository
+git clone https://github.com/your-username/autism-prediction-system.git
+cd autism-prediction-system
 
-### 🚀 Deployment & DevOps
-| Platform/Tool | Purpose |
-|---------------|---------|
-| **Railway** | Backend hosting and deployment |
-| **Vercel** | Frontend hosting with global CDN |
-| **Docker** | Containerization for consistent deployments |
-| **Git** | Version control and collaboration |
+# 2. Start backend
+cd backend
+pip install -r requirements.txt
+python main.py
 
-### 🧠 Machine Learning Pipeline
-| Component | Technology | Purpose |
-|-----------|------------|---------|
-| **Model** | XGBoost Classifier | Binary classification for ASD prediction |
-| **Preprocessing** | Scikit-learn LabelEncoder | Categorical data encoding |
-| **Features** | 20+ behavioral & demographic features | Comprehensive assessment data |
-| **Training Data** | CSV dataset with validated cases | Historical screening results |
-
-## 📁 Project Architecture
-
-```
-autism-prediction-system/
-├── 🔧 backend/                    # FastAPI Backend Service
-│   ├── main.py                   # Core application with ML integration
-│   ├── requirements.txt          # Python dependencies
-│   ├── Dockerfile               # Container configuration
-│   └── railway.json             # Railway deployment config
-├── 🎨 frontend/                   # React Frontend Application
-│   ├── src/
-│   │   ├── components/          # Reusable React components
-│   │   ├── App.jsx             # Main application component
-│   │   └── main.jsx            # Application entry point
-│   ├── package.json            # Node.js dependencies
-│   ├── vite.config.js          # Vite build configuration
-│   ├── tailwind.config.js      # Tailwind CSS configuration
-│   └── vercel.json             # Vercel deployment config
-├── 🤖 models/                     # Machine Learning Assets
-│   ├── best_model.pkl          # Trained XGBoost model (binary)
-│   ├── encoders.pkl            # Label encoders for preprocessing
-│   └── train.csv               # Training dataset
-├── 📚 docs/                       # Documentation
-└── 🚀 deployment configs          # Platform-specific configs
-    ├── Procfile                # Process file for deployment
-    ├── railway.toml            # Railway configuration
-    └── requirements.txt        # Root-level dependencies
+# 3. Start frontend (new terminal)
+cd frontend
+npm install
+npm run dev
 ```
 
-## 🚀 Quick Start
+**Local URLs:** Frontend: `http://localhost:3000` | Backend: `http://localhost:8000`
 
-### Prerequisites
-- **Node.js** 18+ and npm
-- **Python** 3.8+
-- **Git** for version control
-
-### 🏃‍♂️ Local Development
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/your-username/autism-prediction-system.git
-   cd autism-prediction-system
-   ```
-
-2. **🔧 Backend Setup**
-   ```bash
-   cd backend
-   pip install -r requirements.txt
-   python main.py
-   ```
-   ✅ Backend available at `http://localhost:8000`
-
-3. **🎨 Frontend Setup**
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
-   ✅ Frontend available at `http://localhost:3000`
-
-### 🌐 Production Deployment
-
-The application is live and accessible:
-
-- **🌍 Live Application**: https://austin-umber.vercel.app/
-- **📖 API Documentation**: https://austim-production.up.railway.app/docs
-- **🔍 Health Check**: https://austim-production.up.railway.app/health
-
-## 📊 API Reference
-
-### Core Endpoints
-
-| Method | Endpoint | Description | Response |
-|--------|----------|-------------|----------|
-| `GET` | `/` | Welcome message | JSON status |
-| `GET` | `/health` | System health check | Health status |
-| `POST` | `/predict` | ASD prediction | Prediction results |
-| `GET` | `/docs` | Interactive API docs | Swagger UI |
-
-### Prediction Request Format
-```json
-{
-  "A1_Score": 1,
-  "A2_Score": 0,
-  // ... (A1-A10 behavioral scores)
-  "age": 25,
-  "gender": "m",
-  "ethnicity": "White-European",
-  "jaundice": "no",
-  "austim": "no",
-  "used_app_before": "no"
-}
+## Project Structure
+```
+├── backend/          # FastAPI + ML model
+├── frontend/         # React app
+├── models/           # XGBoost model files
+└── docs/            # Documentation
 ```
 
-## 🧠 Machine Learning Model Details
+## How it Works
 
-### Model Performance
-- **Algorithm**: XGBoost (Extreme Gradient Boosting)
-- **Type**: Binary Classification
-- **Features**: 20+ behavioral and demographic indicators
-- **Accuracy**: Optimized for screening sensitivity
+1. **Assessment**: 10 behavioral questions + demographics
+2. **AI Analysis**: Random Forest model (trained with SMOTE) processes responses
+3. **Results**: Instant prediction with recommendations
+4. **Privacy**: No data stored, completely anonymous
 
-### Feature Categories
-1. **Behavioral Assessment** (A1-A10): Core autism screening questions
-2. **Demographics**: Age, gender, ethnicity
-3. **Medical History**: Jaundice, family history
-4. **Previous Screening**: App usage history
+## Machine Learning Details
 
-### Preprocessing Pipeline
-- **Categorical Encoding**: LabelEncoder for text features
-- **Feature Scaling**: Normalized input ranges
-- **Data Validation**: Pydantic models for type safety
+**Models Tested:** Decision Tree, Random Forest, XGBoost
+**Best Performer:** Random Forest (93% accuracy)
+**Data Balancing:** SMOTE (Synthetic Minority Oversampling)
+**Features:** 20+ behavioral & demographic indicators
 
-## ⚠️ Important Medical Disclaimer
+## API Endpoints
 
-> **🏥 Medical Disclaimer**: This application is designed for educational and preliminary screening purposes only. It is **NOT** a substitute for professional medical diagnosis, treatment, or advice.
->
-> **Always consult with qualified healthcare professionals** for proper medical evaluation, diagnosis, and treatment of autism spectrum disorders or any other medical conditions.
+- `POST /predict` - Submit assessment data, get prediction
+- `GET /docs` - Interactive API documentation
+- `GET /health` - System status check
 
-## 🤝 Contributing
+## ⚠️ Medical Disclaimer
 
-We welcome contributions! Please follow these steps:
+**This is a screening tool, not a diagnostic tool.** Always consult healthcare professionals for proper medical evaluation and diagnosis.
 
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
+## Contributing
 
-## 📄 License
+1. Fork the repo
+2. Create feature branch
+3. Make changes
+4. Submit pull request
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+## License
 
-## 🆘 Support & Issues
-
-- 🐛 **Bug Reports**: [Open an Issue](https://github.com/your-username/autism-prediction-system/issues)
-- 💡 **Feature Requests**: [Request a Feature](https://github.com/your-username/autism-prediction-system/issues)
-- 📧 **Contact**: [Your Email](mailto:your-email@example.com)
-
-## 🙏 Acknowledgments
-
-- **Dataset**: Based on autism screening research data
-- **ML Framework**: XGBoost development team
-- **UI Framework**: React and Tailwind CSS communities
-- **Deployment**: Railway and Vercel platforms
+MIT License - see [LICENSE](LICENSE) file.
 
 ---
 
-<div align="center">
-
-**⭐ Star this repository if you found it helpful!**
-
-Made with ❤️ for autism awareness and early screening
-
-</div>
+**⭐ Star this repo if helpful!** | **🐛 [Report Issues](https://github.com/your-username/autism-prediction-system/issues)** | **💡 [Request Features](https://github.com/your-username/autism-prediction-system/issues)**
 - A1-A10 Scores: Responses to 10 behavioral questions
 - Age: Participant's age
 - Gender: Male/Female
