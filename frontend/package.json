@@ -1,17 +1,17 @@
 {
-  "name": "frontend",
+  "name": "asd-screening-frontend",
   "version": "1.0.0",
-  "main": "postcss.config.js",
+  "description": "React frontend for ASD screening application using Random Forest classification",
+  "main": "src/main.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src --ext js,jsx"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["autism", "screening", "react", "machine-learning", "healthcare"],
+  "author": "ASD Screening Team",
+  "license": "MIT",
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.11",
     "@vitejs/plugin-react": "^4.6.0",
