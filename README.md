@@ -16,9 +16,18 @@ Web-based Autism Spectrum Disorder screening tool using Random Forest machine le
 # Backend
 cd backend && pip install -r requirements.txt && python main.py
 
+<<<<<<< HEAD
 # Frontend (new terminal)
 cd frontend && npm install && npm run dev
 ```
+=======
+### Frontend
+- React 18 
+- Tailwind CSS for styling
+- Framer Motion for animations
+- React Hook Form for form management
+- Axios for API communication
+>>>>>>> 12e19bca115a3bb387ed92590aa93cee125df964
 
 ## Model Details
 **Algorithm:** Random Forest Classifier
