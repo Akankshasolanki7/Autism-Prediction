@@ -1,86 +1,114 @@
-# 🧠 ASD Prediction System
+# Autism Spectrum Disorder Screening Tool
 
-AI-powered web application for Autism Spectrum Disorder screening using machine learning.
+A web-based screening application for early detection of Autism Spectrum Disorder (ASD) using machine learning classification.
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-blue?style=for-the-badge)](https://austin-umber.vercel.app/) [![API Docs](https://img.shields.io/badge/📖_API_Docs-green?style=for-the-badge)](https://austim-production.up.railway.app/docs)
+[**Live Application**](https://austin-umber.vercel.app/) | [**API Documentation**](https://austim-production.up.railway.app/docs)
 
-## What it does
-- **Interactive questionnaire** → **AI analysis** → **Instant results** → **Professional recommendations**
-- No data stored, completely private screening process
+## Overview
 
-## Tech Stack
+This application implements a validated ASD screening questionnaire with automated classification using a Random Forest model. The system processes behavioral assessment responses and demographic information to provide screening results and recommendations for professional evaluation.
 
-**Frontend:** React + Vite + Tailwind CSS + Framer Motion
-**Backend:** FastAPI + Random Forest + Scikit-learn + Pandas
-**Deployment:** Vercel (Frontend) + Railway (Backend)
-**ML Model:** Random Forest classifier (93% accuracy) with SMOTE balancing
+## Technical Implementation
 
-## Quick Start
+**Frontend**: React 18, Vite, Tailwind CSS, Framer Motion
+**Backend**: FastAPI, scikit-learn, pandas, uvicorn
+**Model**: Random Forest Classifier (50 estimators, max_depth=20)
+**Data Processing**: Label encoding for categorical variables
+**Deployment**: Vercel (frontend), Railway (backend)
+
+## Model Architecture
+
+**Algorithm**: Random Forest Classifier
+**Configuration**: 50 trees, maximum depth 20, bootstrap disabled
+**Features**: 21 input features (10 behavioral + 11 demographic)
+**Training Data**: 800 samples with balanced class distribution
+**Preprocessing**: Label encoding for 7 categorical variables
+
+### Feature Set
+- **Behavioral Indicators**: A1-A10 scores (binary responses)
+- **Demographics**: Age, gender, ethnicity, country of residence
+- **Medical History**: Jaundice history, family autism history
+- **Assessment Context**: Previous app usage, relationship to subject
+
+## Development Setup
 
 ```bash
-# 1. Clone repository
-git clone https://github.com/your-username/autism-prediction-system.git
+# Clone repository
+git clone <repository-url>
 cd autism-prediction-system
 
-# 2. Start backend
+# Backend setup
 cd backend
-pip install -r requirements.txt
+pip install fastapi uvicorn scikit-learn pandas numpy
 python main.py
 
-# 3. Start frontend (new terminal)
+# Frontend setup (separate terminal)
 cd frontend
 npm install
 npm run dev
 ```
 
-**Local URLs:** Frontend: `http://localhost:3000` | Backend: `http://localhost:8000`
-
 ## Project Structure
 ```
-├── backend/          # FastAPI + ML model
-├── frontend/         # React app
-├── models/           # XGBoost model files
-└── docs/            # Documentation
+├── backend/
+│   ├── main.py              # FastAPI application
+│   └── requirements.txt     # Python dependencies
+├── frontend/
+│   ├── src/                 # React components
+│   └── package.json         # Node dependencies
+├── models/
+│   ├── best_model.pkl       # Trained Random Forest
+│   ├── encoders.pkl         # Label encoders
+│   └── train.csv           # Training dataset (800 samples)
+└── README.md
 ```
 
-## How it Works
+## API Reference
 
-1. **Assessment**: 10 behavioral questions + demographics
-2. **AI Analysis**: Random Forest model (trained with SMOTE) processes responses
-3. **Results**: Instant prediction with recommendations
-4. **Privacy**: No data stored, completely anonymous
+### Prediction Endpoint
+```http
+POST /predict
+Content-Type: application/json
 
-## Machine Learning Details
+{
+  "A1_Score": 1, "A2_Score": 0, ..., "A10_Score": 1,
+  "age": 18, "gender": "m", "ethnicity": "White-European",
+  "jaundice": "no", "austim": "no", "contry_of_res": "United States",
+  "used_app_before": "no", "relation": "Self"
+}
+```
 
-**Models Tested:** Decision Tree, Random Forest, XGBoost
-**Best Performer:** Random Forest (93% accuracy)
-**Data Balancing:** SMOTE (Synthetic Minority Oversampling)
-**Features:** 20+ behavioral & demographic indicators
+### Response Format
+```json
+{
+  "prediction": 0,
+  "probability": 0.23,
+  "risk_level": "Low",
+  "total_score": 3,
+  "recommendations": ["Consult healthcare professional if concerns persist"]
+}
+```
 
-## API Endpoints
+### Other Endpoints
+- `GET /health` - Service health check
+- `GET /docs` - Swagger API documentation
 
-- `POST /predict` - Submit assessment data, get prediction
-- `GET /docs` - Interactive API documentation
-- `GET /health` - System status check
+## Implementation Notes
 
-## ⚠️ Medical Disclaimer
+The Random Forest model was selected after comparing multiple algorithms:
+- Decision Tree: 86% cross-validation accuracy
+- Random Forest: 93% cross-validation accuracy
+- XGBoost: 90% cross-validation accuracy
 
-**This is a screening tool, not a diagnostic tool.** Always consult healthcare professionals for proper medical evaluation and diagnosis.
+Data preprocessing includes SMOTE oversampling to handle class imbalance in the training dataset.
 
-## Contributing
+## Disclaimer
 
-1. Fork the repo
-2. Create feature branch
-3. Make changes
-4. Submit pull request
+This application provides screening results based on validated questionnaire responses. Results should not be considered diagnostic and professional medical consultation is recommended for comprehensive evaluation.
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file.
-
----
-
-**⭐ Star this repo if helpful!** | **🐛 [Report Issues](https://github.com/your-username/autism-prediction-system/issues)** | **💡 [Request Features](https://github.com/your-username/autism-prediction-system/issues)**
+MIT License
 - A1-A10 Scores: Responses to 10 behavioral questions
 - Age: Participant's age
 - Gender: Male/Female
