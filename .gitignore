@@ -156,3 +156,12 @@ dmypy.json
 
 # Old project files
 Autism-Spectrum-Disorder-ASD-Prediction-System/
+
+# Deployment files
+.vercel
+.railway
+deploy.md
+
+# Temporary files
+*.tmp
+*.temp
