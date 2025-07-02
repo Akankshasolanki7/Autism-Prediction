@@ -35,13 +35,18 @@ cd frontend && npm install && npm run dev
 
 ## Project Structure
 ```
-├── backend/main.py          # FastAPI + Random Forest inference
-├── frontend/src/            # React components + Tailwind CSS
+├── backend/
+│   ├── main.py              # FastAPI + Random Forest inference
+│   └── requirements.txt     # Python dependencies
+├── frontend/
+│   ├── src/                 # React components + Tailwind CSS
+│   ├── package.json         # Node dependencies
+│   └── vite.config.js       # Build configuration
 ├── models/
 │   ├── best_model.pkl       # Trained Random Forest
 │   ├── encoders.pkl         # Label encoders
 │   └── train.csv           # 800 training samples
-└── requirements.txt         # fastapi, scikit-learn, pandas
+└── README.md               # This file
 ```
 
 ## API Usage
@@ -76,32 +81,3 @@ curl -X POST https://austim-production.up.railway.app/predict \
 **Disclaimer:** Screening tool only - not for diagnosis. Consult healthcare professionals for medical evaluation.
 
 **License:** MIT
-- A1-A10 Scores: Responses to 10 behavioral questions
-- Age: Participant's age
-- Gender: Male/Female
-- Ethnicity: Ethnic background
-- Jaundice: History of jaundice
-- Family History: Family history of autism
-- Country of Residence: Geographic location
-- Previous App Usage: Prior use of screening apps
-- Relationship: Who is completing the assessment
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Disclaimer
-
-This tool is for screening purposes only and should not be used as a substitute for professional medical diagnosis. Always consult with qualified healthcare professionals for proper evaluation and diagnosis.
-
-## Support
-
-For support, please open an issue on GitHub or contact the development team.
